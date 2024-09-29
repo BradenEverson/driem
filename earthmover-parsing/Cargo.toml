@@ -1,21 +1,10 @@
 [package]
-name = "earthmover-achiever"
+name = "earthmover-parsing"
 edition = "2021"
 version.workspace = true
 authors.workspace = true
 
-[dependencies]
-clap = { version = "4.5.18", features = ["derive"] }
-rppal = { version = "0.19.0", optional = true }
-slotmap = "1.0.7"
-thiserror = "1.0.63"
-tokio = { version = "1.40.0", features = ["full"] }
-urdf-rs = "0.9.0"
-
-[features]
-default = []
-rpi = ["dep:rppal"]
-jetson = []
+[lib]
 
 [lints.rust]
 missing_docs = "warn"
@@ -29,3 +18,7 @@ broken_intra_doc_links = "warn"
 
 [lints.clippy]
 missing_docs_in_private_items = "warn"
+
+[dependencies]
+urdf-rs = "0.9.0"
+earthmover-achiever = { path = "../earthmover-achiever" }
